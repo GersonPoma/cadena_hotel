@@ -1,0 +1,95 @@
+# --- OS / Genéricos ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pyre/
+.pytype/
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+dist/
+build/
+site/
+
+# --- Herramientas / Testing ---
+.coverage
+.coverage.*
+.cache/
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.dmypy.json
+
+# --- Entornos / Variables ---
+.env
+.env.*
+*.env
+*.env.*
+# Si usas dotenv para settings, mantén el .env fuera del repo
+
+# --- IDEs ---
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.sample.json
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+# Opcional: dejar plantillas de run configs
+# .run/
+
+# Rope / Otros
+.ropeproject/
+
+# --- Django ---
+# Base de datos local
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos generados por collectstatic
+staticfiles/
+static_root/
+# Si tienes una carpeta "static" con assets fuente, NO la ignores
+# /static/  <- no ignores esto si contiene assets de la app
+
+# Subidas locales (medios de usuarios)
+media/
+media_root/
+
+# Logs
+*.log
+logs/
+gunicorn*.pid
+celerybeat-schedule
+celerybeat.pid
+
+# Local settings (si los usas)
+local_settings.py
+settings_local.py
+
+# --- Frontend opcional (si integras con React/Angular dentro del repo) ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.next/
+.out/
+coverage/
+.parcel-cache/
