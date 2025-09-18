@@ -5,4 +5,5 @@ from apps.persona.serializer import PersonaSerializer
 class HuespedSerializer(PersonaSerializer):
     class Meta(PersonaSerializer.Meta):
         model = Huesped
-        fields = PersonaSerializer.Meta.fields + ['fecha_registro', 'vip']
+        fields = PersonaSerializer.Meta.fields + ['fecha_registro', 'vip', 'usuario']
+        read_only_fields = ['usuario']
