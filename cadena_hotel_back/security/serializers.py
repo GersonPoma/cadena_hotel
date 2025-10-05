@@ -6,13 +6,13 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def get_token(cls, user):
         token = super().get_token(user)
 
-        # perfiles opcionales
-        if hasattr(user, "empleado"):
-            token["empleado_id"] = user.empleado.id
-        elif hasattr(user, "huesped"):
-            token["huesped_id"] = user.huesped.id
+        # Un solo user_id que puede ser empleado, huesped o usuario base
+        if hasattr(user, "empleado") and user.empleado:
+            token["user_id"] = user.empleado.id
+        elif hasattr(user, "huesped") and user.huesped:
+            token["user_id"] = user.huesped.id
         else:
-            token["usuario_id"] = user.id  # si no tiene perfil
+            token["user_id"] = user.id  # si no tiene perfil
 
         # un solo rol (string)
         role = user.groups.values_list("name", flat=True).first()

@@ -8,4 +8,3 @@ router.register(r'', HuespedViewSet, basename='huespedes')
 urlpatterns = [
     path('', include(router.urls)),
 ]
-

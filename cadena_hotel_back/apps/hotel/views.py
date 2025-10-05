@@ -8,3 +8,4 @@ from .serializers import HotelSerializer
 class HotelViewSet(viewsets.ModelViewSet):
     queryset = Hotel.objects.all()
     serializer_class = HotelSerializer
+    pagination_class = None     # Desactiva la paginación para esta vista

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from apps.cargo.models import Cargo
+from apps.hotel.models import Hotel
 from apps.persona.models import Persona
 
 
@@ -21,4 +22,9 @@ class Empleado(Persona):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='empleado'
+    )
+    hotel = models.ForeignKey(
+        Hotel,
+        on_delete=models.PROTECT,
+        related_name='empleados'
     )

@@ -24,9 +24,12 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('auth/', include('security.urls')),
+    path('api/', include('apps.usuario.urls')),
     path('api/cargos/', include('apps.cargo.urls')),
     path('api/huespedes/', include('apps.huesped.urls')),
     path('api/empleados/', include('apps.empleado.urls')),
     path('api/hoteles/', include('apps.hotel.urls')),
     path('api/habitaciones/', include('apps.habitacion.urls')),
+    path('api/servicios/', include('apps.servicio.urls')),
+    path('api/privilegios/', include('apps.privilegio.urls')),
 ]

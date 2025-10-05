@@ -8,4 +8,3 @@ router.register(r'', EmpleadoViewSet, basename='empleados')
 urlpatterns = [
     path('', include(router.urls)),
 ]
-

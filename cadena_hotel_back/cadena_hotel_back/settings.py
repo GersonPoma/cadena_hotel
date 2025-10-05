@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     "drf_spectacular",
+    'django_filters',
 
     #apps
     'apps.usuario',
@@ -56,6 +57,10 @@ INSTALLED_APPS = [
     'apps.empleado',
     'apps.huesped',
     'apps.persona',
+    'apps.servicio',
+    'apps.rol',
+    'apps.privilegio',
+    'apps.reserva',
 ]
 
 REST_FRAMEWORK = {
@@ -64,6 +69,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,  # elementos por página
 }
 
 SIMPLE_JWT = {
